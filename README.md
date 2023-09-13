@@ -25,11 +25,11 @@ Next, I wrote code for the app, create dockerfile, then made a design for the te
 From the begining, I was going with the Terraform Cloud, but unfortunately it does not support the docker provider, hence I decided to move to use the s3 bucket.
 
 Last, I create the gitlab action file with 3 main concepts:
-    - check format of the terraform script.
-    - check if the s3 bucket exists?
-        - if not, create the s3 bucket then init it as new backend for the infrastructure. 
-        - If yes, move to the next step
-    - create the infrastructure for the deployment.
+- check format of the terraform script.
+- check if the s3 bucket exists?
+    - if not, create the s3 bucket then init it as new backend for the infrastructure. 
+    - If yes, move to the next step
+- create the infrastructure for the deployment.
 
 ## Actions
 
