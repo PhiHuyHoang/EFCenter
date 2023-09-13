@@ -10,7 +10,7 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: ${{ variables.AWS_REGION }}
+      AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
       AWS_DEFAULT_OUTPUT: json
 
     name: "Deploy-Development-Environment"
@@ -74,7 +74,7 @@ jobs:
           terraform init \
           -backend-config="bucket=${{ secrets.TFSTATE_BUCKET }}" \
           -backend-config="key=${{ secrets.TFSTATE_KEY }}" \
-          -backend-config="region=${{ variables.AWS_REGION }}" 
+          -backend-config="region=${{ env.AWS_REGION }}" 
 
       - name: Terraform Plan Infras
         id: plan_infras
